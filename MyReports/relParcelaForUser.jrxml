@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relParcelaNPaga" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="fb6e3c34-ad0c-456c-922f-5369cb0ddcd4">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DB_DP"/>
+	<parameter name="FiltroCodFuncio" class="java.lang.Integer">
+		<parameterDescription><![CDATA[CodFuncionario:]]></parameterDescription>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[SELECT codParcela, codFuncionario, nomeFuncionario, valorParcela, dataVencParcela FROM tbparcela par JOIN tbfuncionarios fun ON fun.codFuncionario = par.tbcoparti_tbfuncionarios_codFuncionario WHERE statusParcela = 1 AND 	tbcoparti_tbfuncionarios_codFuncionario  LIKE '$P!{FiltroCodFuncio}']]>
+	</queryString>
+	<field name="codParcela" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="codParcela"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbparcela"/>
+	</field>
+	<field name="codFuncionario" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="codFuncionario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbfuncionarios"/>
+	</field>
+	<field name="nomeFuncionario" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nomeFuncionario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbfuncionarios"/>
+	</field>
+	<field name="valorParcela" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="valorParcela"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbparcela"/>
+	</field>
+	<field name="dataVencParcela" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="dataVencParcela"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbparcela"/>
+	</field>
+	<variable name="VALOR_TOTAL_N_PAGA" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{valorParcela}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="99" splitType="Stretch">
+			<frame>
+				<reportElement x="-20" y="0" width="594" height="60" uuid="faafc64b-e71e-4497-97ce-ad08ef9d33b5"/>
+				<staticText>
+					<reportElement x="100" y="15" width="100" height="30" uuid="7b3356d8-7839-4eaf-9255-8e11df34eed0"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="18" isBold="true"/>
+					</textElement>
+					<text><![CDATA[DPESSOAL]]></text>
+				</staticText>
+				<image>
+					<reportElement x="20" y="0" width="24" height="29" uuid="174921ee-031e-498b-aac8-1df1c947c096"/>
+					<imageExpression><![CDATA["G:/Setores/Administração/Informática/Público/DepartementoPessoal/icones/HS.png"]]></imageExpression>
+				</image>
+				<image>
+					<reportElement x="444" y="1" width="130" height="59" uuid="538da704-2032-4b79-a05d-9e510f7173cc"/>
+					<imageExpression><![CDATA["G:/Setores/Administração/Informática/Público/DepartementoPessoal/icones/imac.png"]]></imageExpression>
+				</image>
+			</frame>
+			<staticText>
+				<reportElement x="130" y="60" width="294" height="20" uuid="127986b2-f0f8-42e2-9cb4-9a3b6db25634"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Demonstrativo de Parcelas Futuras]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="1" width="90" height="20" uuid="3e99fa27-9951-4a20-8501-7d4c3d879012">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0477bd03-27ff-4007-a965-012108c265ae"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Núm. Parcela]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="1" width="80" height="21" uuid="77c1c384-f0c2-4944-97bc-1a76ef9d13d5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7dabbc28-761d-4f9e-bae6-1e6c75b63b38"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cód. Funconário]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="0" width="100" height="21" uuid="638aa21c-0111-49d3-bd67-4e534bf605b3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="47a8c5f2-d67a-4f3a-8192-db04a5d23528"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor da Parcela]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="-1" width="100" height="21" uuid="805e2ab2-a226-439a-bc43-06583b6f2edd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="aa4381d8-6b2b-45fa-8126-76097f5928e9"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Vencimento]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="22" width="535" height="1" uuid="49d38eb2-32d5-414b-b5e3-ab10b283f560"/>
+			</line>
+			<staticText>
+				<reportElement x="180" y="0" width="170" height="22" uuid="7b959c94-c27a-46e5-abd3-134dd202b33a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="afcf6496-4192-4649-9367-f00fd22568cd"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="19" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="0" width="70" height="16" uuid="3e17dc8e-e14e-49b7-b9b2-f10d1d9d1571">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0477bd03-27ff-4007-a965-012108c265ae"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{codParcela}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="0" width="80" height="16" uuid="0c5a79c2-e095-40b8-bb4a-f5d6f7eac5ff">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7dabbc28-761d-4f9e-bae6-1e6c75b63b38"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{codFuncionario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="0" width="100" height="16" uuid="cbdb5919-46ae-4a99-a009-881067871e08">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="47a8c5f2-d67a-4f3a-8192-db04a5d23528"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["R$ "+$F{valorParcela}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MM/dd/yyyy">
+				<reportElement x="440" y="-2" width="100" height="17" uuid="c9224772-da5c-4e6c-99e1-c3e3de65fbe6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="aa4381d8-6b2b-45fa-8126-76097f5928e9"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{dataVencParcela}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="9" y="15" width="535" height="1" uuid="1925ae9b-65d9-41b6-89c5-78d44c5070e7"/>
+			</line>
+			<textField>
+				<reportElement x="180" y="0" width="170" height="16" uuid="256dbe6a-11e1-41e7-b5c7-7ac039bb50a8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="afcf6496-4192-4649-9367-f00fd22568cd"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nomeFuncionario}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="72" splitType="Stretch">
+			<frame>
+				<reportElement x="-20" y="0" width="594" height="72" uuid="7add8aaa-b92c-4a35-a7fa-085af7f74fd4"/>
+				<textField>
+					<reportElement x="550" y="52" width="19" height="18" uuid="dd337bb9-ed7c-40a9-805e-8bd695b051bd"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="519" y="52" width="30" height="18" uuid="d6847858-f1f2-44d6-96c2-c40dceb58a9a"/>
+					<text><![CDATA[Pag.]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="401" y="51" width="89" height="19" uuid="aea213fb-ce5d-4f5f-9a9a-9b036ede07a0">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<textElement verticalAlignment="Top"/>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="401" y="24" width="165" height="1" uuid="95d9e3d4-5922-44d2-a9d9-7b6f7ee44990"/>
+				</line>
+				<staticText>
+					<reportElement x="30" y="37" width="30" height="14" uuid="5cefb9ce-89d3-4536-a5fb-c7a5221c6c16"/>
+					<textElement verticalAlignment="Top"/>
+					<text><![CDATA[Data:]]></text>
+				</staticText>
+				<line>
+					<reportElement x="59" y="52" width="91" height="1" uuid="19617302-c3a4-4707-80d7-f45c03e7752d"/>
+				</line>
+				<staticText>
+					<reportElement x="60" y="37" width="90" height="14" uuid="a2b7becb-5c9f-4a93-b178-99b1629e2fa3"/>
+					<text><![CDATA[        /       /  ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="10" width="110" height="14" uuid="fdfe42d3-5367-4a82-9932-ce9a4246a229"/>
+					<text><![CDATA[Assinatura Funcionário:]]></text>
+				</staticText>
+				<line>
+					<reportElement x="140" y="24" width="180" height="1" uuid="0f33ce9c-1c0a-48cc-adb9-f164eebe4599"/>
+				</line>
+				<staticText>
+					<reportElement x="400" y="10" width="79" height="14" uuid="bdbbfd40-6a42-4fdc-872e-a5941c4fa8ae"/>
+					<text><![CDATA[Valor acumulado:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="485" y="9" width="16" height="16" uuid="502b0fbd-63e4-41fc-80a5-d639853c96ca"/>
+					<text><![CDATA[R$]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="501" y="9" width="64" height="16" uuid="cf985e77-e8bf-4625-a647-65ab4e274b3f"/>
+					<textFieldExpression><![CDATA[$V{VALOR_TOTAL_N_PAGA}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+</jasperReport>

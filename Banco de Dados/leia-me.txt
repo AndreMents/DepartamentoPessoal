@@ -1,0 +1,3 @@
+Banco de dados MySQL
+User: root
+Senha:

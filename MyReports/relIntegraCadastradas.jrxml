@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="abb0f050-6963-49c2-9da0-6084473f705c">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DB_DP"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT codIntegra, codFuncionario, nomeFuncionario, turnoFuncionario, nomeEmp, dataVencIntegra, dataVencAso FROM tbintegra inte JOIN tbfuncionarios fun ON fun.codFuncionario = inte.tbfuncionarios_codFuncionario JOIN tbempresas emp ON emp.codEmp = inte.tbempresas_codEmp]]>
+	</queryString>
+	<field name="codIntegra" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="codIntegra"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbintegra"/>
+	</field>
+	<field name="codFuncionario" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="codFuncionario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbfuncionarios"/>
+	</field>
+	<field name="nomeFuncionario" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nomeFuncionario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbfuncionarios"/>
+	</field>
+	<field name="turnoFuncionario" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="turnoFuncionario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbfuncionarios"/>
+	</field>
+	<field name="nomeEmp" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nomeEmp"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbempresas"/>
+	</field>
+	<field name="dataVencIntegra" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="dataVencIntegra"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbintegra"/>
+	</field>
+	<field name="dataVencAso" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="dataVencAso"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbintegra"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<frame>
+				<reportElement x="-20" y="0" width="594" height="60" uuid="5ec9da2b-ee30-4bea-8991-b0250991cd66"/>
+				<staticText>
+					<reportElement x="100" y="15" width="170" height="30" uuid="0725b9b1-044d-4e42-b877-cf8f19713020"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="18" isBold="true"/>
+					</textElement>
+					<text><![CDATA[SEG. TRABALHO]]></text>
+				</staticText>
+				<image>
+					<reportElement x="20" y="0" width="24" height="29" uuid="aff7d0b6-7222-4e09-9302-13f6754b2919"/>
+					<imageExpression><![CDATA["G:/Setores/Administração/Informática/Público/DepartementoPessoal/icones/HS.png"]]></imageExpression>
+				</image>
+				<image>
+					<reportElement x="444" y="1" width="130" height="59" uuid="92dfb30f-6a7b-41ee-9a5e-b9433991dd08"/>
+					<imageExpression><![CDATA["G:/Setores/Administração/Informática/Público/DepartementoPessoal/icones/imac.png"]]></imageExpression>
+				</image>
+			</frame>
+			<staticText>
+				<reportElement x="130" y="60" width="294" height="20" uuid="98d3661a-2cf2-4d57-92c2-04609d612a8d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Relatório de Integrações Cadastradas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="30" height="20" uuid="54c93dbf-0532-4846-85bc-285e9269a5cc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1f9a23dc-090f-4778-8602-086ad0215404"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cód.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="170" height="20" uuid="a7cd02a3-cc9e-448f-ab0d-342426a2476b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="499ad21b-fe8a-415c-80de-77e01ff281be"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome Funcionário]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="0" width="50" height="20" uuid="191aba56-15dd-496c-8ebb-765cc5fa76f8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="11d6159e-3593-4ea2-91a8-217567afbcd2"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Turno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="0" width="60" height="20" uuid="8e6fa091-40ce-409e-9e2a-be3231e71f63">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4afe92a4-2e80-4155-9def-5392d1cff938"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="0" width="100" height="20" uuid="88e6f6d0-0cfd-4e65-af3f-7a6af6055f11">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9e9353a4-c5e6-41b3-b1dc-b55b70b56730"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Venc. Integra]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="0" width="80" height="20" uuid="23363824-7f9a-4ca3-ad91-fff5a7939020">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9e0c8775-6c06-4eb0-954c-642b5f52129e"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Venc. ASO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="0" width="60" height="20" uuid="9f8cecd5-c553-4811-9812-965cac887c28">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="38be81c4-49ca-42e5-9d9a-9dfd924868f5"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cód. Funcio]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="20" width="560" height="1" uuid="be466287-59c0-4b92-ad45-e7fd70cbb1ad"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="0" width="30" height="20" uuid="f84aae14-1319-49dd-8a2f-6d83af064148">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1f9a23dc-090f-4778-8602-086ad0215404"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{codIntegra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="170" height="20" uuid="5d37fee7-7199-4c1b-b13c-58589b1f02eb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="499ad21b-fe8a-415c-80de-77e01ff281be"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nomeFuncionario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="0" width="50" height="20" uuid="0f1f73ee-86ed-4426-b2b9-d8bc2d932fa3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="11d6159e-3593-4ea2-91a8-217567afbcd2"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{turnoFuncionario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="0" width="60" height="20" uuid="5faa7b45-dbc8-4622-8c29-736bf33ce18c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4afe92a4-2e80-4155-9def-5392d1cff938"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nomeEmp}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="380" y="0" width="100" height="20" uuid="e7969e15-235f-4893-867a-ac084c256b52">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9e9353a4-c5e6-41b3-b1dc-b55b70b56730"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{dataVencIntegra}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="480" y="0" width="80" height="20" uuid="4b5e5246-2572-4151-a6fe-38867ae90e9c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9e0c8775-6c06-4eb0-954c-642b5f52129e"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{dataVencAso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="0" width="60" height="20" uuid="067ba87e-0867-4d5b-954d-d806bd36ee8b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="38be81c4-49ca-42e5-9d9a-9dfd924868f5"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{codFuncionario}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="20" width="560" height="1" uuid="eb9c08b7-8cf7-4b5a-af22-74b8a32c70cd"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="72" splitType="Stretch">
+			<frame>
+				<reportElement x="-20" y="30" width="594" height="42" uuid="29f72d1d-7e61-4434-8ce4-92d682571e29"/>
+				<textField>
+					<reportElement x="530" y="10" width="39" height="18" uuid="6f6c7287-bc60-4ada-8b21-243f5e537c2c"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="496" y="11" width="30" height="18" uuid="e621dc79-64a8-42f5-97d1-a595869676c9"/>
+					<text><![CDATA[Pag.]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="21" y="10" width="119" height="19" uuid="0239d4fa-dc60-463d-9a28-0ec76b1e24e0"/>
+					<textElement verticalAlignment="Bottom"/>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+</jasperReport>
